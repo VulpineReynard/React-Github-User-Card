@@ -45,7 +45,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1>Github User App</h1>
+          <h1>Github User Finder</h1>
         </header>
         <GithubForm getGithubData={this.getGithubData}/>
         <GithubUser userData={this.state.userData}/>

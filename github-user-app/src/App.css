@@ -60,6 +60,7 @@ h1, h2, h3, h4, h5, h6, p {
   border-radius: 3px;
   border: none;
   padding: 5px;
+  font-size: 1.2rem;
 }
 .github-form button {
   height: 40px;
@@ -128,6 +129,12 @@ h1, h2, h3, h4, h5, h6, p {
 .followers-title {
   color: white;
   margin-top: 10px;
+  font-size: 2rem;
+  border-bottom: 1px solid white;
+  width: 700px;
+  margin: 20px auto;
+  margin-bottom: 40px;
+  padding-bottom: 10px;
 }
 .follower-card {
   width: 250px;
@@ -163,6 +170,10 @@ h1, h2, h3, h4, h5, h6, p {
   color: white;
   font-size: 2.7em;
   cursor: pointer;
+  transition: all .3s;
+}
+.github-icon:hover {
+  color: black;
 }
 .follower-stats {
   width: 90%;
