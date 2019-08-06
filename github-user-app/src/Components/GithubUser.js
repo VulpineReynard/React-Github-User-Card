@@ -9,8 +9,8 @@ class GithubUser extends React.Component {
     console.log(this.props);
     return (
       <div className="github-user">
-        <img className="user-img" src={this.props.userData.avatar_url} alt="user-img"/>
         <h2>{this.props.userData.name}</h2>
+        <img className="user-img" src={this.props.userData.avatar_url} alt="user-img"/>
         <p className="user-handle">{this.props.userData.login}</p>
         <p>Followers: {this.props.userData.followers}</p>
         <p>Following: {this.props.userData.followers}</p>
