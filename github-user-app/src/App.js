@@ -9,7 +9,6 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      user: 'justsml',
       userFollowers: [],
       userData: {}
     }
@@ -20,7 +19,7 @@ class App extends React.Component {
   }
 
   getGithubData = (username) => {
-    if(username == undefined) {username = 'justsml'}
+    if(username === undefined) {username = 'justsml'}
     axios.get(`https://api.github.com/users/${username}`)
       .then(res => {
         this.setState({

@@ -18,13 +18,14 @@ class GithubForm extends React.Component {
     e.preventDefault();
     console.log(this.state.username);
     this.props.getGithubData(this.state.username);
+    e.target.value = '';
   }
 
   render() {
     return (
       <div className="github-form-container">
         <form onSubmit={this.submitForm} className="github-form">
-          <h3>Search GitHub Username:</h3>
+          <h3>Search a GitHub Username:</h3>
           <input onChange={this.handleChange} placeholder="Github Username"/>
           <button>Search</button>
         </form>
