@@ -9,7 +9,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      user: 'VulpineReynard',
+      user: 'justsml',
       userFollowers: [],
       userData: {}
     }
@@ -19,10 +19,10 @@ class App extends React.Component {
     this.getGithubData();
   }
 
-  getGithubData = () => {
-    axios.get(`https://api.github.com/users/${this.state.user}`)
+  getGithubData = (username) => {
+    if(username == undefined) {username = 'justsml'}
+    axios.get(`https://api.github.com/users/${username}`)
       .then(res => {
-        console.log(res);
         this.setState({
           userData: res.data
         })
@@ -31,9 +31,8 @@ class App extends React.Component {
         console.log(err);
       })
 
-    axios.get(`https://api.github.com/users/${this.state.user}/followers`)
+    axios.get(`https://api.github.com/users/${username}/followers`)
       .then(res => {
-        console.log(res)
         this.setState({
           userFollowers: res.data
         })
@@ -49,7 +48,7 @@ class App extends React.Component {
         <header className="App-header">
           <h1>Github User App</h1>
         </header>
-        <GithubForm />
+        <GithubForm getGithubData={this.getGithubData}/>
         <GithubUser userData={this.state.userData}/>
         <GithubFollowersContainer followers={this.state.userFollowers}/>
       </div>
